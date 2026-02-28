@@ -4,191 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoja de Vida - Jose Armando Olivares Hidalgo</title>
-    <style>
-        /* PALETA DE COLORES ELEGANTE: Gris, Negro, Café y Blanco */
-        :root {
-            --cafe-oscuro: #3E2723;
-            --cafe-medio: #6D4C41;
-            --cafe-claro: #A0826D;
-            --gris-oscuro: #212121;
-            --gris-medio: #424242;
-            --gris-claro: #f5f5f5;
-            --blanco: #ffffff;
-            --sombra: 0 4px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, var(--gris-claro) 0%, #e0e0e0 100%);
-            color: var(--gris-oscuro);
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 40px auto;
-            background: var(--blanco);
-            padding: 50px;
-            box-shadow: var(--sombra);
-            border-radius: 12px;
-            border-top: 6px solid var(--cafe-oscuro);
-        }
-
-        /* TÍTULO PRINCIPAL */
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--cafe-claro);
-            padding-bottom: 25px;
-            margin-bottom: 35px;
-        }
-
-        header h1 {
-            color: var(--cafe-oscuro);
-            margin: 0;
-            font-size: 2.2em;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: normal;
-        }
-
-        /* FOTO DE PERFIL */
-        .foto-container {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .foto-container img {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 6px solid var(--cafe-medio);
-            box-shadow: 0 6px 15px rgba(62, 39, 35, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .foto-container img:hover {
-            transform: scale(1.03);
-        }
-
-        /* DATOS PERSONALES */
-        .datos-personales {
-            text-align: center;
-            background: linear-gradient(to right, var(--gris-claro), #fafafa);
-            padding: 25px 30px;
-            border-radius: 10px;
-            margin-bottom: 45px;
-            border-left: 4px solid var(--cafe-medio);
-            border-right: 4px solid var(--cafe-medio);
-        }
-
-        .datos-personales h3 {
-            color: var(--cafe-oscuro);
-            margin-top: 0;
-            border-bottom: 1px dashed var(--cafe-claro);
-            padding-bottom: 10px;
-        }
-
-        .datos-personales ul {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0 0 0;
-        }
-
-        .datos-personales li {
-            margin-bottom: 12px;
-            font-size: 1.05em;
-        }
-
-        .datos-personales strong {
-            color: var(--cafe-medio);
-            font-weight: 600;
-        }
-
-        /* SECCIONES GENERALES */
-        section {
-            margin-bottom: 35px;
-            padding: 25px;
-            background-color: var(--blanco);
-            border-left: 5px solid var(--cafe-medio);
-            border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: box-shadow 0.3s ease;
-        }
-
-        section:hover {
-            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-        }
-
-        h2 {
-            color: var(--cafe-oscuro);
-            border-bottom: 2px solid var(--cafe-claro);
-            padding-bottom: 12px;
-            margin-top: 0;
-            font-size: 1.5em;
-            letter-spacing: 1px;
-        }
-
-        ul {
-            padding-left: 25px;
-            margin: 10px 0;
-        }
-
-        li {
-            margin-bottom: 8px;
-            color: var(--gris-medio);
-        }
-
-        strong {
-            color: var(--cafe-oscuro);
-        }
-
-        /* MOTIVACIÓN - Estilo especial */
-        .motivacion p {
-            font-style: italic;
-            color: var(--gris-medio);
-            text-align: justify;
-            line-height: 2;
-        }
-
-        /* PIE DE PÁGINA */
-        footer {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 25px;
-            border-top: 2px solid var(--cafe-claro);
-            font-size: 0.95em;
-            color: var(--gris-medio);
-        }
-
-        /* EFECTOS Y DETALLES */
-        .separator {
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--cafe-claro), transparent);
-            margin: 30px 0;
-        }
-
-        /* RESPONSIVE - Para celulares */
-        @media (max-width: 768px) {
-            .container {
-                margin: 15px;
-                padding: 30px 25px;
-            }
-            header h1 {
-                font-size: 1.8em;
-                letter-spacing: 2px;
-            }
-            .foto-container img {
-                width: 180px;
-                height: 180px;
-            }
-            section {
-                padding: 20px;
-            }
-        }
-    </style>
+    <!-- 🔗 Vinculamos el archivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -262,7 +79,7 @@
         </section>
 
         <!-- 8. PREFERENCIAS PERSONALES -->
-        <section>
+        <section class="preferencias">
             <h2>Preferencias Personales</h2>
             <ul>
                 <li><strong>Intereses:</strong> Tecnología, lectura, deportes y cultura general</li>
@@ -273,8 +90,8 @@
         </section>
 
         <footer>
-            <p>&copy; 2026 - Jose Armando Olivares Hidalgo | Hoja de Vida Digital</p>
-            <p style="font-size: 0.85em; margin-top: 8px;">Creado con ❤️ en GitHub Pages</p>
+            <p>&copy; 2026 - <strong>Jose Armando Olivares Hidalgo</strong> | Hoja de Vida Digital</p>
+            <p style="font-size: 0.85em; margin-top: 8px; opacity: 0.9;">Creado con ❤️ en GitHub Pages</p>
         </footer>
 
     </div>
