@@ -3,112 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hoja de Vida</title>
+    <title>Hoja de Vida - Jose Armando Olivares Hidalgo</title>
     <style>
-        /* ESTILOS (DISEÑO) DE LA PÁGINA */
+        /* PALETA DE COLORES ELEGANTE: Gris, Negro, Café y Blanco */
+        :root {
+            --cafe-oscuro: #3E2723;
+            --cafe-medio: #6D4C41;
+            --cafe-claro: #A0826D;
+            --gris-oscuro: #212121;
+            --gris-medio: #424242;
+            --gris-claro: #f5f5f5;
+            --blanco: #ffffff;
+            --sombra: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background: linear-gradient(135deg, var(--gris-claro) 0%, #e0e0e0 100%);
+            color: var(--gris-oscuro);
         }
 
         .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            max-width: 850px;
+            margin: 40px auto;
+            background: var(--blanco);
+            padding: 50px;
+            box-shadow: var(--sombra);
+            border-radius: 12px;
+            border-top: 6px solid var(--cafe-oscuro);
         }
 
+        /* TÍTULO PRINCIPAL */
         header {
             text-align: center;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            border-bottom: 2px solid var(--cafe-claro);
+            padding-bottom: 25px;
+            margin-bottom: 35px;
         }
 
         header h1 {
-            color: #2c3e50;
+            color: var(--cafe-oscuro);
             margin: 0;
+            font-size: 2.2em;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            font-weight: normal;
         }
 
-        /* Sección de Foto y Datos Personales */
-        .perfil {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 40px;
-            flex-wrap: wrap; /* Para que se adapte a celulares */
+        /* FOTO DE PERFIL */
+        .foto-container {
+            text-align: center;
+            margin-bottom: 35px;
         }
 
         .foto-container img {
-            width: 150px;
-            height: 150px;
+            width: 220px;
+            height: 220px;
             object-fit: cover;
-            border-radius: 50%; /* Hace la foto redonda */
-            border: 4px solid #3498db;
+            border-radius: 50%;
+            border: 6px solid var(--cafe-medio);
+            box-shadow: 0 6px 15px rgba(62, 39, 35, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .foto-container img:hover {
+            transform: scale(1.03);
+        }
+
+        /* DATOS PERSONALES */
+        .datos-personales {
+            text-align: center;
+            background: linear-gradient(to right, var(--gris-claro), #fafafa);
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin-bottom: 45px;
+            border-left: 4px solid var(--cafe-medio);
+            border-right: 4px solid var(--cafe-medio);
+        }
+
+        .datos-personales h3 {
+            color: var(--cafe-oscuro);
+            margin-top: 0;
+            border-bottom: 1px dashed var(--cafe-claro);
+            padding-bottom: 10px;
         }
 
         .datos-personales ul {
             list-style: none;
             padding: 0;
+            margin: 15px 0 0 0;
         }
 
         .datos-personales li {
-            margin-bottom: 8px;
-            font-size: 1.1em;
+            margin-bottom: 12px;
+            font-size: 1.05em;
         }
 
         .datos-personales strong {
-            color: #2c3e50;
+            color: var(--cafe-medio);
+            font-weight: 600;
         }
 
-        /* Secciones Generales */
+        /* SECCIONES GENERALES */
         section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background-color: #fafafa;
-            border-left: 5px solid #3498db;
-            border-radius: 4px;
+            margin-bottom: 35px;
+            padding: 25px;
+            background-color: var(--blanco);
+            border-left: 5px solid var(--cafe-medio);
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
         }
 
         h2 {
-            color: #2c3e50;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+            color: var(--cafe-oscuro);
+            border-bottom: 2px solid var(--cafe-claro);
+            padding-bottom: 12px;
             margin-top: 0;
+            font-size: 1.5em;
+            letter-spacing: 1px;
         }
 
         ul {
-            padding-left: 20px;
+            padding-left: 25px;
+            margin: 10px 0;
         }
 
         li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            color: var(--gris-medio);
         }
 
-        /* Pie de página */
+        strong {
+            color: var(--cafe-oscuro);
+        }
+
+        /* MOTIVACIÓN - Estilo especial */
+        .motivacion p {
+            font-style: italic;
+            color: var(--gris-medio);
+            text-align: justify;
+            line-height: 2;
+        }
+
+        /* PIE DE PÁGINA */
         footer {
             text-align: center;
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #777;
+            margin-top: 60px;
+            padding-top: 25px;
+            border-top: 2px solid var(--cafe-claro);
+            font-size: 0.95em;
+            color: var(--gris-medio);
         }
 
-        /* Ajuste para celulares */
-        @media (max-width: 600px) {
-            .perfil {
-                flex-direction: column;
-                text-align: center;
-            }
+        /* EFECTOS Y DETALLES */
+        .separator {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--cafe-claro), transparent);
+            margin: 30px 0;
+        }
+
+        /* RESPONSIVE - Para celulares */
+        @media (max-width: 768px) {
             .container {
-                margin: 10px;
+                margin: 15px;
+                padding: 30px 25px;
+            }
+            header h1 {
+                font-size: 1.8em;
+                letter-spacing: 2px;
+            }
+            .foto-container img {
+                width: 180px;
+                height: 180px;
+            }
+            section {
                 padding: 20px;
             }
         }
@@ -117,79 +193,90 @@
 <body>
 
     <div class="container">
+        
+        <!-- 1. TÍTULO -->
         <header>
             <h1>Hoja de Vida</h1>
         </header>
 
-        <!-- Foto y Datos Personales -->
-        <div class="perfil">
-            <div class="foto-container">
-                <!-- AQUÍ VA TU FOTO. Asegúrate de subir el archivo 'foto.jpg' a GitHub también -->
-                <img src="foto.jpg" alt="Foto de Perfil">
-            </div>
-            <div class="datos-personales">
-                <ul>
-                    <li><strong>Nombre Completo:</strong> [Tu Nombre Aquí]</li>
-                    <li><strong>Lugar de Nacimiento:</strong> [Tu Ciudad, País]</li>
-                    <li><strong>Fecha de Nacimiento:</strong> [Día/Mes/Año]</li>
-                    <li><strong>Correo Electrónico:</strong> [tu@email.com]</li>
-                </ul>
-            </div>
+        <!-- 2. FOTO -->
+        <div class="foto-container">
+            <!-- Sube tu foto como 'foto.jpg' a tu repositorio de GitHub -->
+            <img src="foto.jpg" alt="Foto de Jose Armando Olivares Hidalgo">
         </div>
 
-        <!-- Formación Académica -->
+        <!-- 3. DATOS PERSONALES -->
+        <div class="datos-personales">
+            <h3>Datos Personales</h3>
+            <ul>
+                <li><strong>Nombre Completo:</strong> Jose Armando Olivares Hidalgo</li>
+                <li><strong>Lugar de Nacimiento:</strong> Sucre, Bolivia</li>
+                <li><strong>Fecha de Nacimiento:</strong> 25 de mayo de 2001</li>
+                <li><strong>Correo Electrónico:</strong> olivareshidalgojosearmando@gmail.com</li>
+            </ul>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- 4. FORMACIÓN ACADÉMICA -->
         <section>
             <h2>Formación Académica</h2>
             <ul>
-                <li><strong>[Título Obtenido]</strong> - [Nombre de la Institución] ([Año de inicio] - [Año de fin])</li>
-                <li><strong>[Otro Título o Bachillerato]</strong> - [Nombre del Colegio/Universidad]</li>
+                <li><strong>Kínder:</strong> Colegio La Recoleta</li>
+                <li><strong>Nivel Primario:</strong> Colegio La Recoleta</li>
+                <li><strong>Nivel Secundario:</strong> Colegio La Recoleta</li>
+                <li><strong>Bachillerato:</strong> Colegio José Mariano Serrano</li>
             </ul>
         </section>
 
-        <!-- Idiomas -->
+        <!-- 5. IDIOMAS -->
         <section>
             <h2>Idiomas</h2>
             <ul>
                 <li><strong>Español:</strong> Nativo</li>
-                <li><strong>Inglés:</strong> [Nivel: Básico/Intermedio/Avanzado]</li>
-                <li><strong>[Otro Idioma]:</strong> [Nivel]</li>
+                <li><strong>Inglés:</strong> Nivel Básico</li>
             </ul>
         </section>
 
-        <!-- Habilidades -->
+        <!-- 6. HABILIDADES -->
         <section>
             <h2>Habilidades y Competencias</h2>
             <ul>
-                <li>Liderazgo y trabajo en equipo</li>
-                <li>Manejo de herramientas ofimáticas (Word, Excel, PowerPoint)</li>
-                <li>Comunicación asertiva</li>
-                <li>[Agrega otra habilidad tuya]</li>
+                <li>Responsabilidad y compromiso</li>
+                <li>Trabajo en equipo y colaboración</li>
+                <li>Capacidad de aprendizaje continuo</li>
+                <li>Manejo de herramientas digitales básicas</li>
+                <li>Comunicación efectiva</li>
             </ul>
         </section>
 
-        <!-- Motivación -->
-        <section>
+        <!-- 7. MOTIVACIÓN -->
+        <section class="motivacion">
             <h2>Motivación por la Carrera</h2>
             <p>
-                [Escribe aquí un párrafo explicando por qué elegiste tu carrera. 
-                Por ejemplo: "Elegí esta carrera porque siempre me ha apasionado la tecnología 
-                y quiero contribuir a la innovación digital en mi país..."]
+                Elegí esta carrera porque tengo un genuino interés por crecer profesionalmente y contribuir al desarrollo de mi país. 
+                Me motiva la posibilidad de adquirir nuevos conocimientos, enfrentar desafíos y aplicar mis habilidades para generar 
+                un impacto positivo en mi entorno. Creo firmemente que la educación es la herramienta más poderosa para transformar 
+                realidades y asumo este camino con dedicación y entusiasmo.
             </p>
         </section>
 
-        <!-- Preferencias Personales -->
+        <!-- 8. PREFERENCIAS PERSONALES -->
         <section>
             <h2>Preferencias Personales</h2>
             <ul>
-                <li><strong>Intereses:</strong> [Lectura, Deportes, Música, etc.]</li>
-                <li><strong>Disponibilidad:</strong> [Tiempo completo / Medio tiempo]</li>
-                <li><strong>Ubicación preferida:</strong> [Tu ciudad o disposición a viajar]</li>
+                <li><strong>Intereses:</strong> Tecnología, lectura, deportes y cultura general</li>
+                <li><strong>Disponibilidad:</strong> Flexible para aprender y crecer profesionalmente</li>
+                <li><strong>Ubicación:</strong> Sucre, Bolivia (con disposición a movilizarse)</li>
+                <li><strong>Valores:</strong> Honestidad, perseverancia y respeto</li>
             </ul>
         </section>
 
         <footer>
-            <p>&copy; 2023 - Creado con GitHub Pages</p>
+            <p>&copy; 2026 - Jose Armando Olivares Hidalgo | Hoja de Vida Digital</p>
+            <p style="font-size: 0.85em; margin-top: 8px;">Creado con ❤️ en GitHub Pages</p>
         </footer>
+
     </div>
 
 </body>
