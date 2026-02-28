@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida</title>
+    <style>
+        /* ESTILOS (DISEÑO) DE LA PÁGINA */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            color: #2c3e50;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Sección de Foto y Datos Personales */
+        .perfil {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap; /* Para que se adapte a celulares */
+        }
+
+        .foto-container img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%; /* Hace la foto redonda */
+            border: 4px solid #3498db;
+        }
+
+        .datos-personales ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .datos-personales li {
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .datos-personales strong {
+            color: #2c3e50;
+        }
+
+        /* Secciones Generales */
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-left: 5px solid #3498db;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* Ajuste para celulares */
+        @media (max-width: 600px) {
+            .perfil {
+                flex-direction: column;
+                text-align: center;
+            }
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Hoja de Vida</h1>
+        </header>
+
+        <!-- Foto y Datos Personales -->
+        <div class="perfil">
+            <div class="foto-container">
+                <!-- AQUÍ VA TU FOTO. Asegúrate de subir el archivo 'foto.jpg' a GitHub también -->
+                <img src="foto.jpg" alt="Foto de Perfil">
+            </div>
+            <div class="datos-personales">
+                <ul>
+                    <li><strong>Nombre Completo:</strong> [Tu Nombre Aquí]</li>
+                    <li><strong>Lugar de Nacimiento:</strong> [Tu Ciudad, País]</li>
+                    <li><strong>Fecha de Nacimiento:</strong> [Día/Mes/Año]</li>
+                    <li><strong>Correo Electrónico:</strong> [tu@email.com]</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Formación Académica -->
+        <section>
+            <h2>Formación Académica</h2>
+            <ul>
+                <li><strong>[Título Obtenido]</strong> - [Nombre de la Institución] ([Año de inicio] - [Año de fin])</li>
+                <li><strong>[Otro Título o Bachillerato]</strong> - [Nombre del Colegio/Universidad]</li>
+            </ul>
+        </section>
+
+        <!-- Idiomas -->
+        <section>
+            <h2>Idiomas</h2>
+            <ul>
+                <li><strong>Español:</strong> Nativo</li>
+                <li><strong>Inglés:</strong> [Nivel: Básico/Intermedio/Avanzado]</li>
+                <li><strong>[Otro Idioma]:</strong> [Nivel]</li>
+            </ul>
+        </section>
+
+        <!-- Habilidades -->
+        <section>
+            <h2>Habilidades y Competencias</h2>
+            <ul>
+                <li>Liderazgo y trabajo en equipo</li>
+                <li>Manejo de herramientas ofimáticas (Word, Excel, PowerPoint)</li>
+                <li>Comunicación asertiva</li>
+                <li>[Agrega otra habilidad tuya]</li>
+            </ul>
+        </section>
+
+        <!-- Motivación -->
+        <section>
+            <h2>Motivación por la Carrera</h2>
+            <p>
+                [Escribe aquí un párrafo explicando por qué elegiste tu carrera. 
+                Por ejemplo: "Elegí esta carrera porque siempre me ha apasionado la tecnología 
+                y quiero contribuir a la innovación digital en mi país..."]
+            </p>
+        </section>
+
+        <!-- Preferencias Personales -->
+        <section>
+            <h2>Preferencias Personales</h2>
+            <ul>
+                <li><strong>Intereses:</strong> [Lectura, Deportes, Música, etc.]</li>
+                <li><strong>Disponibilidad:</strong> [Tiempo completo / Medio tiempo]</li>
+                <li><strong>Ubicación preferida:</strong> [Tu ciudad o disposición a viajar]</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 - Creado con GitHub Pages</p>
+        </footer>
+    </div>
+
+</body>
+</html>
