@@ -1,0 +1,516 @@
+/* =========================================
+   HOJA DE VIDA - ESTILOS PROFESIONALES
+   Jose Armando Olivares Hidalgo
+   Paleta: Café, Gris, Negro y Blanco
+   ========================================= */
+
+/* VARIABLES DE COLOR - Fácil de personalizar */
+:root {
+    --cafe-oscuro: #3E2723;
+    --cafe-medio: #6D4C41;
+    --cafe-claro: #A0826D;
+    --cafe-suave: #D7CCC8;
+    
+    --gris-oscuro: #212121;
+    --gris-medio: #424242;
+    --gris-claro: #f5f5f5;
+    --gris-borde: #e0e0e0;
+    
+    --blanco: #ffffff;
+    --blanco-suave: #fafafa;
+    
+    --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --sombra-media: 0 8px 25px rgba(0, 0, 0, 0.12);
+    --sombra-hover: 0 12px 35px rgba(62, 39, 35, 0.2);
+    
+    --transicion: all 0.3s ease;
+}
+
+/* RESET Y BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.8;
+    background: linear-gradient(135deg, var(--gris-claro) 0%, var(--gris-borde) 100%);
+    color: var(--gris-medio);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    background: var(--blanco);
+    padding: 50px 60px;
+    border-radius: 16px;
+    box-shadow: var(--sombra-media);
+    border-top: 8px solid var(--cafe-oscuro);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decoración sutil en esquinas */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, transparent 50%, var(--cafe-suave) 50%);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+/* =========================================
+   ENCABEZADO Y TÍTULO
+   ========================================= */
+header {
+    text-align: center;
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+    border-bottom: 3px double var(--cafe-claro);
+    position: relative;
+}
+
+header h1 {
+    color: var(--cafe-oscuro);
+    font-size: 2.4em;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: normal;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+}
+
+header h1::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--cafe-medio);
+    border-radius: 2px;
+}
+
+/* =========================================
+   FOTO DE PERFIL
+   ========================================= */
+.foto-container {
+    text-align: center;
+    margin: 30px 0 40px 0;
+    position: relative;
+}
+
+.foto-container img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 7px solid var(--blanco);
+    box-shadow: var(--sombra-hover);
+    transition: var(--transicion);
+    position: relative;
+    z-index: 2;
+}
+
+.foto-container img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 45px rgba(62, 39, 35, 0.3);
+}
+
+/* Marco decorativo alrededor de la foto */
+.foto-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    border: 2px dashed var(--cafe-claro);
+    animation: girar 20s linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@keyframes girar {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* =========================================
+   DATOS PERSONALES
+   ========================================= */
+.datos-personales {
+    background: linear-gradient(135deg, var(--blanco-suave), var(--gris-claro));
+    padding: 30px 40px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+    border: 2px solid var(--cafe-suave);
+    position: relative;
+}
+
+.datos-personales::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--cafe-oscuro), var(--cafe-medio), var(--cafe-claro));
+    border-radius: 12px 12px 0 0;
+}
+
+.datos-personales h3 {
+    color: var(--cafe-oscuro);
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-size: 1.4em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--cafe-claro);
+    padding-bottom: 15px;
+}
+
+.datos-personales ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.datos-personales li {
+    font-size: 1.05em;
+    padding: 8px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.datos-personales strong {
+    color: var(--cafe-medio);
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+/* =========================================
+   SECCIONES DE CONTENIDO
+   ========================================= */
+section {
+    margin-bottom: 40px;
+    padding: 28px 32px;
+    background: var(--blanco);
+    border-left: 6px solid var(--cafe-medio);
+    border-radius: 0 10px 10px 0;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion);
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--cafe-oscuro), var(--cafe-medio));
+    opacity: 0;
+    transition: var(--transicion);
+}
+
+section:hover {
+    box-shadow: var(--sombra-media);
+    transform: translateX(5px);
+}
+
+section:hover::before {
+    opacity: 1;
+}
+
+section h2 {
+    color: var(--cafe-oscuro);
+    font-size: 1.5em;
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--cafe-suave);
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--cafe-oscuro);
+}
+
+/* Listas dentro de secciones */
+section ul {
+    padding-left: 25px;
+    margin: 10px 0;
+}
+
+section li {
+    margin-bottom: 12px;
+    color: var(--gris-medio);
+    position: relative;
+    padding-left: 5px;
+}
+
+section li::marker {
+    color: var(--cafe-medio);
+    font-weight: bold;
+}
+
+section strong {
+    color: var(--cafe-oscuro);
+    font-weight: 600;
+}
+
+/* =========================================
+   SECCIÓN DE MOTIVACIÓN (Estilo especial)
+   ========================================= */
+.motivacion {
+    background: linear-gradient(135deg, var(--blanco-suave), #fff8f5);
+    border-left-color: var(--cafe-oscuro);
+}
+
+.motivacion p {
+    font-style: italic;
+    color: var(--gris-medio);
+    text-align: justify;
+    line-height: 2.1;
+    font-size: 1.05em;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.motivacion p::first-letter {
+    font-size: 2.5em;
+    color: var(--cafe-medio);
+    font-weight: bold;
+    float: left;
+    line-height: 0.8;
+    padding-right: 8px;
+    padding-top: 4px;
+}
+
+/* =========================================
+   PREFERENCIAS PERSONALES - Grid
+   ========================================= */
+.preferencias ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.preferencias li {
+    background: var(--gris-claro);
+    padding: 12px 18px;
+    border-radius: 8px;
+    border-left: 3px solid var(--cafe-claro);
+    transition: var(--transicion);
+}
+
+.preferencias li:hover {
+    background: var(--cafe-suave);
+    transform: translateX(3px);
+}
+
+/* =========================================
+   SEPARADOR DECORATIVO
+   ========================================= */
+.separator {
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--cafe-claro), 
+        var(--cafe-medio), 
+        var(--cafe-claro), 
+        transparent);
+    margin: 40px 0;
+    border-radius: 2px;
+    position: relative;
+}
+
+.separator::after {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--blanco);
+    padding: 0 15px;
+    color: var(--cafe-medio);
+    font-size: 1.2em;
+}
+
+/* =========================================
+   PIE DE PÁGINA
+   ========================================= */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 3px double var(--cafe-claro);
+    color: var(--gris-medio);
+    font-size: 0.95em;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer strong {
+    color: var(--cafe-oscuro);
+}
+
+/* =========================================
+   EFECTOS Y ANIMACIONES
+   ========================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container > * {
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+}
+
+.container > *:nth-child(1) { animation-delay: 0.1s; opacity: 1; }
+.container > *:nth-child(2) { animation-delay: 0.2s; opacity: 1; }
+.container > *:nth-child(3) { animation-delay: 0.3s; opacity: 1; }
+.container > *:nth-child(4) { animation-delay: 0.4s; opacity: 1; }
+.container > *:nth-child(5) { animation-delay: 0.5s; opacity: 1; }
+.container > *:nth-child(6) { animation-delay: 0.6s; opacity: 1; }
+.container > *:nth-child(7) { animation-delay: 0.7s; opacity: 1; }
+.container > *:nth-child(8) { animation-delay: 0.8s; opacity: 1; }
+.container > *:nth-child(9) { animation-delay: 0.9s; opacity: 1; }
+
+/* =========================================
+   RESPONSIVE - CELULARES Y TABLETS
+   ========================================= */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        margin: 15px auto;
+        padding: 35px 30px;
+        border-radius: 12px;
+    }
+    
+    header h1 {
+        font-size: 1.9em;
+        letter-spacing: 2px;
+    }
+    
+    .foto-container img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .foto-container::before {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .datos-personales ul {
+        grid-template-columns: 1fr;
+    }
+    
+    section {
+        padding: 22px 25px;
+        border-radius: 0 8px 8px 0;
+    }
+    
+    section h2 {
+        font-size: 1.35em;
+    }
+    
+    .preferencias ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px 20px;
+    }
+    
+    header h1 {
+        font-size: 1.6em;
+        letter-spacing: 1px;
+    }
+    
+    .foto-container img {
+        width: 170px;
+        height: 170px;
+    }
+    
+    .datos-personales {
+        padding: 25px 20px;
+    }
+    
+    section {
+        padding: 20px;
+        border-left-width: 4px;
+    }
+}
+
+/* =========================================
+   IMPRESIÓN - Versión para imprimir
+   ========================================= */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .container {
+        margin: 0;
+        padding: 30px;
+        box-shadow: none;
+        border: none;
+        border-top: 5px solid var(--cafe-oscuro);
+    }
+    
+    .foto-container img {
+        border: 3px solid var(--cafe-medio);
+        box-shadow: none;
+    }
+    
+    section {
+        box-shadow: none;
+        border-left: 4px solid var(--cafe-medio);
+        break-inside: avoid;
+    }
+    
+    .separator {
+        display: none;
+    }
+}
